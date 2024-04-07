@@ -13,6 +13,5 @@ jobs:
     steps:
       - name: print GITHUB_WORKSPACE
         run: echo $GITHUB_WORKSPACE
-      - name: build main
       #- name: build main
       #  run: gcc -o my_app src/main.c src/functions.c -Iinclude
