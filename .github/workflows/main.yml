@@ -11,5 +11,5 @@ jobs:
   build-program:
     runs-on: ubuntu-latest
     steps:
-      - name: Build program
-        run: gcc -o main $GITHUB_WORKSPACE/my_project/src/main.c $GITHUB_WORKSPACE/my_project/src/functions.c -I$GITHUB_WORKSPACE/my_project/include
+      - name: print GITHUB_WORKSPACE
+        run: echo $GITHUB_WORKSPACE
