@@ -1,28 +1,26 @@
-name: CI/CD Pipeline
-
+name: hello world
 on:
   push:
-    branches:
-      - develop
-
+    branches: [develop]
 jobs:
-  build:
+  say-hello:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Build application
-      run: |
-        gcc -o my_app main.c functions.c
-
-  deploy:
-    needs: build
+      - run: echo "TODAY=$(date +%y-%m-%d)" >> $GITHUB_ENV
+      - run: echo Hello World, today is $TODAY
+  print-env-var:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Deploy application
-      run: |
-        echo "Deploying application..."
-        # Add your deployment commands here
+      - name: print GITHUB_WORKSPACE
+        run: echo $GITHUB_WORKSPACE
+      - name: print GITHUB_ENV
+        run: echo $GITHUB_ENV
+  build-program:
+    runs-on: ubuntu-latest
+    steps:
+      -name: Checkout repository
+        uses: actions/checkout@v2
+      -name: Build
+        run: gcc -o main main.c functions.c -I.
+      -name: Test
+        run: ./main
