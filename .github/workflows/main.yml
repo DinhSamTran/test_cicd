@@ -29,7 +29,7 @@ jobs:
       - name: Test example
         run: ./example
   deploy:
-    needs: build
+    needs: build-program
     runs-on: ubuntu-latest
     steps:
       - name: Deploy application
