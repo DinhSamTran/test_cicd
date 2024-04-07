@@ -24,3 +24,7 @@ jobs:
         run: gcc -o main main.c functions.c -I.
       - name: Test
         run: ./main
+      - name: Build example
+        run: gcc -o main main.c functions.c -I.
+      - name: Test example
+        run: ./main
