@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print GITHUB_WORKSPACE
-        run: echo $GITHUB_WORKSPACE >> $GITHUB_ENV
+        run: echo $GITHUB_WORKSPACE
       - name: print GITHUB_ENV
         run: echo $GITHUB_ENV
       - name: build main
