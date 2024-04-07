@@ -13,5 +13,7 @@ jobs:
     steps:
       - name: print GITHUB_WORKSPACE
         run: echo $GITHUB_WORKSPACE
+      - name: print GITHUB_ENV
+        run: echo $GITHUB_ENV
       - name: build main
-        run: gcc -o my_app main.c functions.c -I.
+        run: gcc -o example example.c
