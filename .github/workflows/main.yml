@@ -8,3 +8,7 @@ jobs:
     steps:
       - run: echo "TODAY=$(date +%y-%m-%d)" >> $GITHUB_ENV
       - run: echo Hello World, today is $TODAY
+  build-program:
+    steps:
+      -run: gcc -o main ../../my_project/src/main.c ../../my_project/src/functions.c -I../../my_project/include
+      
